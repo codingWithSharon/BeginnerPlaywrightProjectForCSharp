@@ -26,4 +26,9 @@
     <Using Include="System.Threading.Tasks" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UITests\TestFixtures\" />
+    <Folder Include="UITests\PageObjectModels\" />
+  </ItemGroup>
+
 </Project>
