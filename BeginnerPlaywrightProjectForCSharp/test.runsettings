@@ -1,18 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
- 
+
 	<Playwright>
-<BrowserName>chromium</BrowserName>
-<LaunchOptions>
-<<<<<<< HEAD
-<Headless>false</Headless>
-</LaunchOptions>
-</Playwright>
+		<BrowserName>chromium</BrowserName>
+		<LaunchOptions>
+			<Headless>false</Headless>
+		</LaunchOptions>
+	</Playwright>
 </RunSettings>
- 
-=======
-<Headless>faLse</Headless>
-</LaunchOptions>
-</Playwright>
-</RunSettings>
->>>>>>> 3a114eebe58349c3d5c4c74874aa129cc1182169
