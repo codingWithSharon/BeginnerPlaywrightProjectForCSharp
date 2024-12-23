@@ -27,7 +27,7 @@ Now open the Test Explorer if not already opened and press the green play button
 
 Now if you see green checkmarks and the browser window showed up the demotest ran successfully!
 
-## Backup your project
+## Backup your project and version control with Git
 
 Before going any further you should first backup the project. In this project we use GitHub.
 
@@ -35,3 +35,12 @@ Before going any further you should first backup the project. In this project we
 2. In Visual Studio make sure you are connected to your GitHub account
 3. Go to "Git Changes" > Create Repository > Create
 4. Check the new repository on GitHub
+5. Create a new branch (even when working alone on aproject it is best practice to work from a branch)
+
+## Structuring the project
+
+## Create a Page Object Model
+
+## Writing a test
+
+## Keep practicing
