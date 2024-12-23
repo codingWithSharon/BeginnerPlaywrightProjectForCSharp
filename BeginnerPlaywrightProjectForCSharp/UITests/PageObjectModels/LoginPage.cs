@@ -9,20 +9,31 @@ namespace BeginnerPlaywrightProjectForCSharp.UITests.PageObjectModels
         {
 
         }
-        // No need for a constructor to pass the IPage since PageTest already provides it
 
-        // Locators
-        public ILocator _confirmingTitle => Page.Locator("//span[@class='title']");
+        // Locators for actions
         public ILocator _passwordField => Page.GetByPlaceholder("Password");
         public ILocator _loginButton => Page.Locator("input.submit-button.btn_action");
         public ILocator _usernameField => Page.GetByPlaceholder("Username");
 
-        // Action for standard login
+        // Locators for confirmations
+        public ILocator _confirmingTitle => Page.Locator("//span[@class='title']");
+        public ILocator _confirmingFailMessage => Page.Locator("//div[@class='error-message-container error']");
+
+
+
+        // Actions
         public async Task StandardLogin(string username, string password)
         {
 
-            await _passwordField.FillAsync(password);
             await _usernameField.FillAsync(username);
+            await _passwordField.FillAsync(password);
+            await _loginButton.ClickAsync();
+        }
+
+        public async Task LockedLogin(string username, string password)
+        {
+            await _usernameField.FillAsync(username);
+            await _passwordField.FillAsync(password);
             await _loginButton.ClickAsync();
         }
     }
