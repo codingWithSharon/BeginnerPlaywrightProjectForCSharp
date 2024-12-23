@@ -1,27 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Playwright;
+﻿using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace BeginnerPlaywrightProjectForCSharp.UITests.PageObjectModels
 {
-    internal class LoginPage: PageTest
+    public class LoginPage : BasePage
     {
-        public ILocator _usernameField => Page.GetByPlaceholder("Username");
+        public LoginPage(IPage page):base(page)
+        {
+
+        }
+        // No need for a constructor to pass the IPage since PageTest already provides it
+
+        // Locators
+        public ILocator _confirmingTitle => Page.Locator("//span[@class='title']");
         public ILocator _passwordField => Page.GetByPlaceholder("Password");
         public ILocator _loginButton => Page.Locator("input.submit-button.btn_action");
+        public ILocator _usernameField => Page.GetByPlaceholder("Username");
 
+        // Action for standard login
         public async Task StandardLogin(string username, string password)
         {
-            await _usernameField.FillAsync(username);
+
             await _passwordField.FillAsync(password);
+            await _usernameField.FillAsync(username);
             await _loginButton.ClickAsync();
         }
-    };
-
-
+    }
 }
