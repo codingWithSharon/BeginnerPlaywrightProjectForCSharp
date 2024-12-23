@@ -1,6 +1,7 @@
 # A beginners project for Playwright and C#
 
-A quick guide to get started with Playwright and C#.
+A quick guide to get started with Playwright and C#. In the previous project we used Playwright with JavaScript to get familiar with the basic concepts when creating an automated test.
+In this project we wil use the same UI with simular tests so we can focus on C#.
 
 ## Set Up
 
@@ -11,7 +12,7 @@ A quick guide to get started with Playwright and C#.
 	- using Microsoft.Playwright;
 	- using Microsoft.Playwright.NUnit;
 
-	NOTE: Make sure you get a version mismatch. If so then check for updates and rebuild the project
+	NOTE: Make sure you don't get a version mismatch. If so then check for updates and rebuild the project
 
 4. Add the following 2 lines at the top of your testfile:
 					
@@ -39,8 +40,15 @@ Before going any further you should first backup the project. In this project we
 
 ## Structuring the project
 
+It is good practice to organize the project so it can run suffciently. To do so you have to create POM pages also known as Page Object Models.
+The POM is a file where you can save your locators and create and save tasks.
+
+Also consider a .runsettings file and setup file. These files will hold deal with some praticalities
+
 ## Create a Page Object Model
 
 ## Writing a test
 
+In the first test we need to be aware when we link the files like the POM and the test fixture that we do this corectly.
+In programming it is important to keep everything orginized and in order to do so we need to place things in different files 
 ## Keep practicing
