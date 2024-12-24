@@ -20,6 +20,9 @@ namespace BeginnerPlaywrightProjectForCSharp.UITests.TestFixtures
             await Page.GotoAsync("https://www.saucedemo.com/");
             await shoppingPage.QuickLogin(usernameQL, passwordQL);
             await shoppingPage.FilterProductResults();
+            await shoppingPage.FilterPriceFromLowToHigh();
+            await shoppingPage.ConfirmPricesLowToHigh();
+            
         }
     }
 }
