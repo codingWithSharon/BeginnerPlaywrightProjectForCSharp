@@ -50,5 +50,14 @@ Also consider a .runsettings file and setup file. These files will hold deal wit
 ## Writing a test
 
 In the first test we need to be aware when we link the files like the POM and the test fixture that we do this corectly.
-In programming it is important to keep everything orginized and in order to do so we need to place things in different files 
+In programming it is important to keep everything orginized and in order to do so we need to place things in different files and these different files need to be able to work together.
+
+### Debuging
+
+- In test explorer you can easily select a test and debug
+- In the Developer PowerShell you can debug using the following commands:
+
+		$env:PWDEBUG=1
+	    dotnet test
+
 ## Keep practicing
