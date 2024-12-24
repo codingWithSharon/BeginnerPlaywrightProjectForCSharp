@@ -60,4 +60,6 @@ In programming it is important to keep everything orginized and in order to do s
 		$env:PWDEBUG=1
 	    dotnet test
 
+		dotnet test --filter FullyQualifiedName=Namespace.ClassName.MethodName
+
 ## Keep practicing
