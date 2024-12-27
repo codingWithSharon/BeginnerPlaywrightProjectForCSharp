@@ -109,7 +109,7 @@ namespace BeginnerPlaywrightProjectForCSharp.UITests.PageObjectModels
             }
             else
             {
-                Console.WriteLine("CORRECT:  Prices are in acsending order");
+                Console.WriteLine("CORRECT:  Prices are in decsending order");
             }
         }
     }
