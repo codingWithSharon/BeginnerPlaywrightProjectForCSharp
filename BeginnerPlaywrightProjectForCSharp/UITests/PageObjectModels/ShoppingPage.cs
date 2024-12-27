@@ -9,7 +9,7 @@ using Microsoft.Playwright.NUnit;
 
 namespace BeginnerPlaywrightProjectForCSharp.UITests.PageObjectModels
 {
-    public class ShoppingPage : BasePage 
+    public class ShoppingPage : BasePage
     {
         public ShoppingPage(IPage page) : base(page)
         {
@@ -34,7 +34,7 @@ namespace BeginnerPlaywrightProjectForCSharp.UITests.PageObjectModels
 
         // Locators for confirmations
         public ILocator _InventoryContainer => Page.Locator("//div[@class='inventory_item_price']");
-        
+
 
 
         // Actions
@@ -75,22 +75,43 @@ namespace BeginnerPlaywrightProjectForCSharp.UITests.PageObjectModels
 
         public async Task ConfirmPricesLowToHigh()
         {
-            var priceElements = await _InventoryContainer.AllAsync();
+            var priceElementsLoHi = await _InventoryContainer.AllAsync();
 
-            var prices = await Task.WhenAll(priceElements.Select(async element =>
+            var prices1 = await Task.WhenAll(priceElementsLoHi.Select(async element1 =>
             {
-                var priceText = await element.InnerTextAsync();
-                return Convert.ToDecimal(priceText.Replace("$", "").Trim());
+                var priceText1 = await element1.InnerTextAsync();
+                return Convert.ToDecimal(priceText1.Replace("$", "").Trim());
             }));
 
-            if (!prices.SequenceEqual(prices.OrderBy(price => price)))
+            if (!prices1.SequenceEqual(prices1.OrderBy(price => price)))
             {
                 throw new Exception("INCORRECT: Prices are not sorted in ascending order!");
             }
-            else 
+            else
+            {
+                Console.WriteLine("CORRECT:  Prices are in acsending order");
+            }
+        }
+
+        public async Task ConfirmPricesHighToLow()
+        {
+            var priceElementsHiLo = await _InventoryContainer.AllAsync();
+
+            var prices2 = await Task.WhenAll(priceElementsHiLo.Select(async element2 =>
+            {
+                var priceText2 = await element2.InnerTextAsync();
+                return Convert.ToDecimal(priceText2.Replace("$", "").Trim());
+            }));
+
+            if (!prices2.SequenceEqual(prices2.OrderByDescending(price => price)))
+            {
+                throw new Exception("INCORRECT: Prices are not sorted in descending order!");
+            }
+            else
             {
                 Console.WriteLine("CORRECT:  Prices are in acsending order");
             }
         }
     }
 }
+

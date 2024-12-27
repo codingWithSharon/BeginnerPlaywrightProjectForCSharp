@@ -22,7 +22,8 @@ namespace BeginnerPlaywrightProjectForCSharp.UITests.TestFixtures
             await shoppingPage.FilterProductResults();
             await shoppingPage.FilterPriceFromLowToHigh();
             await shoppingPage.ConfirmPricesLowToHigh();
-            
+            await shoppingPage.FilterPriceFromHighToLow();
+            await shoppingPage.ConfirmPricesHighToLow();
         }
     }
 }
